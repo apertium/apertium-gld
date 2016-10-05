@@ -1,11 +1,35 @@
-! Morphological Transducer for gld
-
 Multichar_Symbols
 
-! Part of speech categories
-%<n%>  ! Noun
-%<pl%> ! Plural
-%<sg%> ! Singular
+%<n%>    ! Noun
+%<pl%>   ! Plural
+%<sg%>   ! Singular
+
+%<nom%>
+%<obl%>
+%<dat%>
+%<dir%>   ! Directive
+%<abl%>
+%<ben%>   ! Benefactive / destinative
+%<ins%>
+%<loc%>
+
+%<px1sg%>
+%<px2sg%>
+%<px3sg%>
+%<px1pl%>
+%<px2pl%>
+%<px3pl%>
+
+%<rxsg%>
+%<rxpl%>
+
+%{в%}
+%{A%}
+%{O%}
+
+%{ː%}
+
+%> 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
@@ -16,24 +40,39 @@ LEXICON Root
 NounRoot ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CASE 
+
+%<nom%>: # ;
+%<obl%>:%>%{в%}%{A%} # ; 
+%<dat%>:%>д%{O%} # ; 
+%<dir%>:%>чи # ; 
+%<abl%>:%>ди%{A%}ди # ; 
+%<ben%>:%>г%{O%} # ; 
+%<ins%>:%>ди # ; 
+
+LEXICON NUMBER 
+
+%<sg%>: CASE ; 
+%<pl%>:%>с%{A%}л CASE ; 
+
+LEXICON N-OGDA
+
+%<n%>: NUMBER ;
+%<n%>%<sg%>%<loc%>:%>л%{A%} # ; 
+%<n%>%<pl%>%<loc%>:%>с%{A%}л%>л%{A%} # ; 
+
+LEXICON N-NIITSJEN
+
+%<n%>: NUMBER ;
+%<n%>%<sg%>%<loc%>:%>д%{O%}л%{A%} # ; 
+%<n%>%<pl%>%<loc%>:%>с%{A%}л%>л%{A%} # ; 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON NounRoot
 
-house RegNounInfl ; ! A noun
-
-LEXICON RegNounInfl
-
-%<n%>%<sg%>:   # ;
-%<n%>%<pl%>:s   # ;
-
-! Resources:
-! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
-! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
-! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
-! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
-! http://hfst.sourceforge.net/
-! http://www.cis.upenn.edu/~cis639/docs/lexc.html
-! http://wiki.apertium.org/wiki/Hfst
-
+огда:огда N-OGDA ; 
+ниичэн:ни%{ː%}чэн N-NIITSJEN ;

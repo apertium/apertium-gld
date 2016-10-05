@@ -1,22 +1,54 @@
 Alphabet
- A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
- a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z
- %{A%}:a %>:0  ;
+
+ а б в г д е ё ж з и й к л м н ӈ о п р с т у ф х ц ч ш щ ъ ы ь э ю я  !!= * @CODE@
+ А Б В Г Д Е Ё Ж З И Й К Л М Н Ӈ О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я  !!= * @CODE@
+
+!а̄ е̄ ӣ э̄ ӯ о̄
+!А̄ Е̄ Ӣ ¯Э Ӯ О̄
+
+ %{A%}:а %{A%}:э
+ %{O%}:о %{O%}:у
+ %{в%}:в %{в%}:б %{в%}:0
+
+ %{ː%}:̄  !!= * @CODE@
+
+ %>:0  ;
 
 Sets
 
-Vowel = A E Ä I O Ö U Ü Y Ý 
-        a e ä i o ö u ü y ý ;
+Vow = а е ё и о у ы э ю я 					
+      А Е Ё И О У Ы Э Ю Я ; 
+
+Cns = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ ъ ь
+      Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ Ъ Ь ; 
+
+RealCns = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ 
+          Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ ; 
 
 Rules 
 
-"Remove suffix vowel with vowel-ending stem"
-i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
+"Vowel harmony for {A}"
+%{A%}:Vy <=> :Vx [ :Cns* :RealCns ]/[ :0 | %- ]* _ ;
+         where Vx in ( а ё и о у ы э ю я ) 
+               Vy in ( а а э а э э э э а ) 
+         matched ;
 
-! Resources:
-! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
-! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
-! http://hfst.sourceforge.net/
-! http://wiki.apertium.org/wiki/Twol
-! http://wiki.apertium.org/wiki/Hfst
+"Vowel harmony for {O}"
+%{O%}:Vy <=> :Vx [ :Cns* :RealCns ]/[ :0 | %- ]* _ ;
+         except 
+             [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
+         where Vx in ( а ё и о у ы э ю я ) 
+               Vy in ( о о у о у у у у о )
+         matched ;
 
+"Vowel harmony for {O} in final syllable"
+%{O%}:у <=> [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
+
+"Intervocalic {в}"
+%{в%}:в <=> :Vow %>: _ :Vow ; 
+
+"Labialisation of {в}"
+%{в%}:б <=> [ н: | л: ] %>: _ :Vow ; 
+
+"Assimilation of н to м"
+н:м <=> _ %>: :б  ;
