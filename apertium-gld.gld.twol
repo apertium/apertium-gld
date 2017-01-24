@@ -25,24 +25,50 @@ Cns = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ ъ ь
 RealCns = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ 
           Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ ; 
 
+ArchiVow = %{A%} %{O%} ;
+
+Len = %{ː%} ;
+
+BackVow = а ё о я ;
+
+FrontVow = у ы э ю ; 
+
+NeutVow = и ;
+
 Rules 
 
-"Vowel harmony for {A}"
-%{A%}:Vy <=> :Vx [ :Cns* :RealCns ]/[ :0 | %- ]* _ ;
-         where Vx in ( а ё и о у ы э ю я ) 
-               Vy in ( а а э а э э э э а ) 
-         matched ;
+! н:н и:и {ː}:̄ ч:ч э:э н:н >:0 д:д и:и {A}:э д:д и:и
 
-"Vowel harmony for {O}"
-%{O%}:Vy <=> :Vx [ :Cns* :RealCns ]/[ :0 | %- ]* _ ;
-         except 
-             [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
-         where Vx in ( а ё и о у ы э ю я ) 
-               Vy in ( о о у о у у у у о )
-         matched ;
+!огда<n><sg><abl>:огда>ди{A}ди
+!огда<n><sg><obl>:огда>{в}{A}
+!огда<n><pl><loc>:огда>с{A}л>д{O}л{A}
 
-"Vowel harmony for {O} in final syllable"
-%{O%}:у <=> [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
+!ниичэн<n><sg><abl>:ни{ː}чэн>ди{A}ди
+!ниичэн<n><sg><obl>:ни{ː}чэн>{в}{A}
+!ниичэн<n><pl><loc>:ни{ː}чэн>с{A}л>д{O}л{A}
+
+!ихон<n><pl><loc>:ихон>с{A}л>д{O}л{A}
+
+! и:и х:х о:о н:н >:0 с:с {A}:а л:л >:0 д:д {O}:о л:л {A}:а
+
+"Front harmony for {A}"
+%{A%}:э <=> :FrontVow (:Cns) %>: [ :Cns | NeutVow | :0 | Len: | :FrontVow ]* _ ;
+
+"Back harmony for {A}"
+%{A%}:а <=> :BackVow (:Cns) %>: [ :Cns | NeutVow | :0 | Len: | :BackVow ]* _ ;
+
+! о:о г:г д:д а:а >:0 д:д и:и {A}:а д:д и:и
+
+!"Vowel harmony for {O}"
+!%{O%}:Vy <=> :Vx [ :Cns* :RealCns ]/[ :0 | %- ]* _ ;
+!         except 
+!             [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
+!         where Vx in ( а ё о у ы э ю я ) 
+!               Vy in ( о о о у у у у о )
+!         matched ;
+
+!"Vowel harmony for {O} in final syllable"
+!%{O%}:у <=> [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
 
 "Intervocalic {в}"
 %{в%}:в <=> :Vow %>: _ :Vow ; 

@@ -45,28 +45,28 @@ LEXICON CASE
 
 %<nom%>: # ;
 %<obl%>:%>%{в%}%{A%} # ; 
-%<dat%>:%>д%{O%} # ; 
+%<dat%>:%>д%{O%} # ;  ! Dir/LR
+%<dat%>:%>ду # ;  
 %<dir%>:%>чи # ; 
 %<abl%>:%>ди%{A%}ди # ; 
-%<ben%>:%>г%{O%} # ; 
+%<ben%>:%>г%{O%} # ; ! FIXME: -го/-гу [Front], -гу [Back]
 %<ins%>:%>ди # ; 
 
 LEXICON NUMBER 
 
 %<sg%>: CASE ; 
 %<pl%>:%>с%{A%}л CASE ; 
+%<pl%>%<loc%>:%>с%{A%}л%>д%{O%}л%{A%} # ; 
 
 LEXICON N-OGDA
 
 %<n%>: NUMBER ;
 %<n%>%<sg%>%<loc%>:%>л%{A%} # ; 
-%<n%>%<pl%>%<loc%>:%>с%{A%}л%>л%{A%} # ; 
 
 LEXICON N-NIITSJEN
 
 %<n%>: NUMBER ;
 %<n%>%<sg%>%<loc%>:%>д%{O%}л%{A%} # ; 
-%<n%>%<pl%>%<loc%>:%>с%{A%}л%>л%{A%} # ; 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
@@ -74,5 +74,7 @@ LEXICON N-NIITSJEN
 
 LEXICON NounRoot
 
-огда:огда N-OGDA ; 
-ниичэн:ни%{ː%}чэн N-NIITSJEN ;
+огда:огда N-OGDA ; ! "лодка"
+ниичэн:ни%{ː%}чэн N-NIITSJEN ; ! "птица"
+дэрэ:дэрэ N-OGDA ; ! "стол"
+ихон:ихон N-NIITSJEN ; ! "деревня"
