@@ -72,9 +72,11 @@ Multichar_Symbols
 LEXICON Root
 
 Determiners ;
+Pronouns  ;
 Numerals ;
 Nouns ;
 Adverbs ;
+Adjectives ;
 Verbs ;
 Punctuation ;
 
@@ -267,6 +269,78 @@ LEXICON N-NIITSJEN
 %<n%>: NUMBER ;
 %<n%>%<sg%>%<loc%>:%>д%{O%}л%{A%} POSS-LOC ; 
 
+LEXICON PRON-PERS-12-OBL
+
+%<sg%>%<acc%>:мбинэ # ;
+%<sg%>%<ins%>:нди # ;
+%<sg%>%<dat%>:нду # ;
+%<sg%>%<loc%>:ндулэ # ;
+%<sg%>%<dir%>:нчи # ;
+%<sg%>%<abl%>:ндиэди # ;
+
+LEXICON PRON-PERS-MI
+
+%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>: # ;
+%<prn%>%<pers%>%<p1%>%<sg%>: PRON-PERS-12-OBL ;
+
+LEXICON PRON-PERS-SI
+
+%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>: # ;
+%<prn%>%<pers%>%<p2%>%<sg%>: PRON-PERS-12 ;
+
+LEXICON PRON-PERS-BUE
+
+%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:э # ;
+%<prn%>%<pers%>%<p1%>%<pl%>: PRON-PERS-12-OBL ;
+
+LEXICON PRON-PERS-SUE
+
+%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:э # ;
+%<prn%>%<pers%>%<p2%>%<pl%>: PRON-PERS-12-OBL ;
+
+LEXICON PRON-PERS-NYOANI
+
+%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:ни # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:мбани # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<ins%>:ндиани # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:ндоани # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:ндолани # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<dir%>:нчиани # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:ндиадиани # ;
+
+LEXICON PRON-PERS-NYOANTSJI
+
+%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:нчи # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:мбачи # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<ins%>:ндиачи # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:ндоачи # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:ндолачи # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<dir%>:нчиачи # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:ндиадиачи # ;
+
+LEXICON PRON-REFL-MEPI
+
+%<prn%>%<ref%>%<sg%>%<acc%>:пи # ;
+%<prn%>%<ref%>%<sg%>%<ins%>:ндии # ;
+%<prn%>%<ref%>%<sg%>%<dat%>:ндуи # ;
+%<prn%>%<ref%>%<sg%>%<loc%>:ндулэи # ;
+%<prn%>%<ref%>%<sg%>%<dir%>:нчии # ;
+%<prn%>%<ref%>%<sg%>%<abl%>:ндиэдии # ;
+
+LEXICON PRON-REFL-MEPERI
+
+%<prn%>%<ref%>%<pl%>%<acc%>:пэри # ;
+%<prn%>%<ref%>%<pl%>%<ins%>:ндиэри # ;
+%<prn%>%<ref%>%<pl%>%<dat%>:ндуэри # ;
+%<prn%>%<ref%>%<pl%>%<loc%>:ндулэри # ;
+%<prn%>%<ref%>%<pl%>%<dir%>:нчиэри # ;
+%<prn%>%<ref%>%<pl%>%<abl%>:ндиэдиэри # ;
+
+
+LEXICON A
+
+%<adj%>: # ;
+
 LEXICON ADV
 
 %<adv%>: K ;
@@ -290,10 +364,33 @@ LEXICON NUM
 LEXICON Determiners
 
 эй:эй DET-DEM ; 
+мэй:мэй DET-DEM ; 
+
+LEXICON Pronouns 
+
+ми:ми PRON-PERS-MI ;
+си:си PRON-PERS-SI ;
+буэ:бу PRON-PERS-BUE ;
+суэ:су PRON-PERS-SUE ;
+
+нёани:нёа PRON-PERS-NYOANI ; 
+нёанчи:нёа PRON-PERS-NYOANTSJI ; 
+
+мэпи:мэ PRON-REFL-MEPI ;
+мэпэри:мэ PRON-REFL-MEPERI ;
 
 LEXICON Numerals
 
-эм:эм NUM ; ! "один"
+эм:эм NUM ; ! "один" ! эмун(?)
+дюэр:дюэр NUM ; ! "два"
+илан:илан NUM ; ! "три"
+дуин:дуин NUM ; ! "четыре"
+тойнга:тойнга NUM ; ! "пять"
+нюнгун:нюнгун NUM ; ! "шесть"
+надан:надан NUM ; ! "семь"
+дякпун:дякпун NUM ; ! "восемь"
+хуюн:хуюн NUM ; ! "девять"
+дёан:дёан NUM ; ! "десять"
 
 LEXICON Nouns
 
@@ -315,8 +412,15 @@ LEXICON Nouns
 
 ! дёг:дёг 
 
+LEXICON Adjectives 
+
+дяди:дяди A ; ! "легко"
+
 LEXICON Adverbs
 
+хаоси:хаоси ADV-ITG ; ! "куда"
+хаяди:хаяди ADV-ITG ; ! "откуда"
+хали:хали ADV-ITG ; ! "когда"
 хони:хони ADV-ITG ; ! "как"
 
 гэ:гэ ADV ; ! ""
