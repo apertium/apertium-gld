@@ -1,17 +1,40 @@
 Multichar_Symbols
 
 %<n%>    ! Noun
+%<det%>  
+%<prn%>  
+%<adv%>  
+
+%<v%>    ! 
+
+%<tv%>   !
+%<iv%>   !
+
+%<p1%>
+%<p2%>
+%<p3%>
+
 %<pl%>   ! Plural
 %<sg%>   ! Singular
 
+%<emph%> 
+
 %<nom%>
-%<obl%>
+%<acc%>
 %<dat%>
 %<dir%>   ! Directive
 %<abl%>
 %<ben%>   ! Benefactive / destinative
 %<ins%>
 %<loc%>
+
+%<pres%>
+%<past%>
+
+%<gpr_pres%>
+%<ger_pres%>
+
+%<freq%> ! One more time
 
 %<px1sg%>
 %<px2sg%>
@@ -23,12 +46,23 @@ Multichar_Symbols
 %<rxsg%>
 %<rxpl%>
 
-%{в%}
-%{A%}
-%{O%}
+%{б%}          ! б / -
+%{в%}          ! б / в 
+%{н%}          ! н / -
+%{к%}          ! к / ч
+%{A%}          ! а / э
+%{I%}          ! и / -
+%{O%}          ! о / у 
+%{i%}          ! и / -
+%{w%}          ! б / в / -
+
+
+%{ъ%}
+%{ь%}
 
 %{ː%}
 
+%-
 %> 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -37,44 +71,292 @@ Multichar_Symbols
 
 LEXICON Root
 
-NounRoot ;
+Determiners ;
+Numerals ;
+Nouns ;
+Adverbs ;
+Verbs ;
+Punctuation ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+LEXICON K
+
+%+да%<emph%>:%>%-д%{A%} # ;
+# ;
+
+LEXICON PERS
+
+%<p1%>%<sg%>:%>%{б%}и # ;
+%<p1%>%<sg%>:%>%{б%}%{i%} # ; ! Dir/LR
+%<p2%>%<sg%>:%>си # ;
+%<p3%>%<sg%>:%>ни # ;
+%<p1%>%<pl%>:%>пу # ;
+%<p2%>%<pl%>:%>су # ;
+%<p3%>%<pl%>:%>чи # ;
+%<p3%>%<pl%>:%>л # ; ! Dir/LR
+
+LEXICON TENSE-12-COMMON
+
+%<past%>:%>х%{A%}%{н%} PERS ;
+%<past%>:%>х%{A%}%{н%} # ;
+%<past%>:%>х%{A%} # ; ! Dir/LR
+
+LEXICON TENSE-1 
+
+%<pres%>:%>%{I%} PERS ;
+%<pres%>:%>%{I%} # ;
+
+%<gna%>:%>р%{A%} # ;
+%<gpr_pres%>:%>%{I%} # ;
+%<ger_pres%>:%>%{I%} CASE ;
+
+TENSE-12-COMMON  ;
+
+LEXICON TENSE-2
+
+%<pres%>:%>ри PERS ;
+%<gpr_pres%>:%>ри # ;
+%<ger_pres%>:%>ри CASE ;
+
+%<gna%>:%>р%{A%} # ;
+
+TENSE-12-COMMON  ;
+
+LEXICON TENSE-3
+
+%<pres%>:%>ди PERS ;
+%<gpr_pres%>:%>ди # ;
+%<ger_pres%>:%>ди CASE ;
+%<gna%>:%>ки # ;
+%<past%>:%>%{к%}и{н%} PERS ; 
+
+LEXICON V-DER 
+
+%<freq%>:%>г%{O%} TENSE-1 ;
+%<impers%>:%>%{w%}%{O%} TENSE-1 ;
+
+LEXICON V-1-TV
+
+%<v%>%<tv%>: TENSE-1 ; 
+%<v%>%<tv%>: V-DER ; 
+
+LEXICON V-2-TV 
+
+%<v%>%<tv%>: TENSE-2 ;
+%<v%>%<tv%>: V-DER ; 
+
+LEXICON V-3-TV 
+
+%<v%>%<tv%>: TENSE-3 ;
+%<v%>%<tv%>: V-DER ; 
+
+LEXICON V-1-IV
+
+%<v%>%<iv%>: TENSE-1 ; 
+%<v%>%<iv%>: V-DER ; 
+
+LEXICON V-2-IV 
+
+%<v%>%<iv%>: TENSE-2 ;
+%<v%>%<iv%>: V-DER ; 
+
+LEXICON V-3-IV 
+
+%<v%>%<iv%>: TENSE-3 ;
+%<v%>%<iv%>: V-DER ; 
+
+LEXICON V-X-IV 
+
+%<v%>%<iv%>%<pres%>:%>%{I%} PERS ;
+%<v%>%<iv%>%<past%>:%>%{к%}и{н%} PERS ; 
+%<v%>%<iv%>%<past%>:%>%{к%}и{н%} # ;
+%<v%>%<iv%>: V-DER ; 
+
+LEXICON POSS-ACC
+
+%<px1sg%>:%>%{б%}и%>в%{A%} # ; 
+%<px1pl%>:%>п%{O%}%>в%{A%} # ; 
+%<px2sg%>:%>%{б%}%{A%}%>си # ; 
+%<px3sg%>:%>%{б%}%{A%}%>ни # ; 
+!%<px2pl%>:%>%{б%}%{A%}%>с%{O%} # ; 
+%<px2pl%>:%>%{б%}%{A%}%>су # ; 
+%<px2pl%>:%>%{б%}%{A%}%>со # ; 
+%<px3pl%>:%>%{б%}%{A%}чи # ; 
+%<rxsg%>:%>%{б%}и # ;
+%<rxpl%>:%>%{б%}%{A%}ри # ;
+
+LEXICON POSS-LOC
+
+%<px1sg%>:%>и%>в%{A%} # ; 
+%<px1pl%>:%>п%{O%}%>в%{A%} # ; 
+%<px2sg%>:%>си # ; 
+%<px3sg%>:%>%{н%}и # ; 
+!%<px2pl%>:%>с%{O%} # ; 
+%<px2pl%>:%>су # ; 
+%<px2pl%>:%>со # ; 
+%<px3pl%>:%>чи # ; 
+%<rxsg%>:%>и # ;
+%<rxpl%>:%>ри # ;
+
+# ;
+
+LEXICON POSS-NOM
+
+%<px1sg%>:%>%{б%}и # ; 
+!%<px1pl%>:%>п%{O%} # ; 
+%<px1pl%>:%>пу # ; 
+%<px1pl%>:%>по # ; 
+%<px2sg%>:%>си # ; 
+%<px3sg%>:%>%{н%}и # ; 
+!%<px2pl%>:%>с%{O%} # ; 
+%<px2pl%>:%>су # ; 
+%<px2pl%>:%>со # ; 
+%<px3pl%>:%>чи # ; 
+
+# ;
+
+LEXICON POSS-1-OBL
+
+%<px1sg%>:%>и%>в%{A%} # ; 
+%<px1pl%>:%>п%{O%}%>в%{A%} # ; 
+
+LEXICON POSS-23-OBL
+
+%<px2sg%>:%>%{A%}%>си # ; 
+%<px3sg%>:%>%{A%}%>ни # ; 
+!%<px2pl%>:%>%{A%}%>с%{O%} # ; 
+%<px2pl%>:%>%{A%}%>со # ; 
+%<px2pl%>:%>%{A%}%>су # ; 
+%<px3pl%>:%>%{A%}%>чи # ; 
+%<rxsg%>:%>%{б%}и # ;
+%<rxpl%>:%>%{A%}ри # ;
+
+LEXICON POSS-OBL
+
+POSS-1-OBL ;
+POSS-23-OBL ;
+
+# ;
+
 LEXICON CASE 
 
-%<nom%>: # ;
-%<obl%>:%>%{в%}%{A%} # ; 
-%<dat%>:%>д%{O%} # ;  ! Dir/LR
+%<nom%>: POSS-NOM ;
+%<acc%>:%>%{в%}%{A%} # ; 
+%<acc%>: POSS-ACC ; 
+%<dat%>:%>д%{O%} POSS-OBL ;  ! Dir/LR
 %<dat%>:%>ду # ;  
-%<dir%>:%>чи # ; 
-%<abl%>:%>ди%{A%}ди # ; 
-%<ben%>:%>г%{O%} # ; ! FIXME: -го/-гу [Front], -гу [Back]
-%<ins%>:%>ди # ; 
+%<dir%>:%>чи POSS-OBL ; 
+%<abl%>:%>ди%{A%}ди POSS-OBL ; 
+%<ben%>:%>г%{O%} POSS-OBL ; ! FIXME: -го/-гу [Front], -гу [Back]
+%<ins%>:%>ди POSS-OBL ; 
 
 LEXICON NUMBER 
 
 %<sg%>: CASE ; 
 %<pl%>:%>с%{A%}л CASE ; 
-%<pl%>%<loc%>:%>с%{A%}л%>д%{O%}л%{A%} # ; 
+%<pl%>%<loc%>:%>с%{A%}л%>д%{O%}л%{A%} POSS-LOC ; 
 
 LEXICON N-OGDA
 
 %<n%>: NUMBER ;
-%<n%>%<sg%>%<loc%>:%>л%{A%} # ; 
+%<n%>%<sg%>%<loc%>:%>л%{A%} POSS-LOC ; 
 
 LEXICON N-NIITSJEN
 
 %<n%>: NUMBER ;
-%<n%>%<sg%>%<loc%>:%>д%{O%}л%{A%} # ; 
+%<n%>%<sg%>%<loc%>:%>д%{O%}л%{A%} POSS-LOC ; 
+
+LEXICON ADV
+
+%<adv%>: K ;
+
+LEXICON ADV-ITG
+
+%<adv%>%<itg%>: K ;
+
+LEXICON DET-DEM 
+
+%<det%>%<dem%>: # ;
+
+LEXICON NUM
+
+%<num%>: # ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-LEXICON NounRoot
+LEXICON Determiners
+
+эй:эй DET-DEM ; 
+
+LEXICON Numerals
+
+эм:эм NUM ; ! "один"
+
+LEXICON Nouns
 
 огда:огда N-OGDA ; ! "лодка"
 ниичэн:ни%{ː%}чэн N-NIITSJEN ; ! "птица"
 дэрэ:дэрэ N-OGDA ; ! "стол"
 ихон:ихон N-NIITSJEN ; ! "деревня"
+
+дяка:дяка N-OGDA ; ! "вещь"
+усэлтэ:усэлтэ N-OGDA ; ! "зверь"
+
+най:най N-NIITSJEN ; ! "человек"
+
+боа:боа N-OGDA ; ! "место"
+хасар:хасар N-NIITSJEN ; ! "крыло"
+
+соли:соли N-OGDA ; ! "лиса"
+хусэгден:хусэгден N-NIITSJEN ; ! "охотник"
+
+! дёг:дёг 
+
+LEXICON Adverbs
+
+хони:хони ADV-ITG ; ! "как"
+
+гэ:гэ ADV ; ! ""
+тэнг:тэнг ADV ; ! "только, очень"
+балана:балана ADV ; ! "давно"
+тул%-тул:тул%-тул ADV ; ! "все время"
+
+LEXICON Verbs
+
+дёбо:дёбо V-1-TV ; ! "работать"
+ба̄:ба%{ː%} V-2-TV ; ! "находить"
+ун:ун V-3-TV ; ! "говорить"
+га:га V-3-TV ; ! "собирать"
+би:би%{ь%} V-X-IV ; ! "быть"
+хул:хул V-3-TV ; ! "лить"
+соли:соли V-1-TV ; ! "перемешевать"
+
+ниру:ниру V-1-TV ; ! "писать"
+туту:туту V-1-IV ; ! "бежать"
+энэ:энэ V-1-IV ; ! "идти"
+улэси:улэси V-1-TV ; ! "любить" ! FIXME
+или:или%{ъ%} V-1-IV ; ! "вставать" 
+оси:оси V-1-IV ; ! "становиться"
+
+бӯ:бу%{ː%} V-2-TV ; ! "давать"
+ниэ:ниэ V-2-IV ; ! "выходить"
+ӣ:и%{ː%}%{ь%} V-2-IV ; ! "входить"
+сӣ:си%{ː%}%{ь%} V-2-IV ; ! "пройти"
+чӣ:чи%{ː%}%{ь%} V-2-IV ; ! "отбирать"
+ва̄:ва%{ː%} V-2-TV ; ! "убивать"
+ва̄йча:ва%{ː%}йча V-1-TV ; ! "убивать"
+са̄:са V-2-TV ; ! "знать"
+
+халачи:халачи V-1-TV ; ! "ждать"
+илиси:илиси V-1-IV ; ! "стоять"
+тари:тари V-1-TV ; ! "сажать"
+пулси:пулси V-1-IV ; ! "ходить"
+
+LEXICON Punctuation 
+
+%.%<sent%>:%. # ;
+%:%<sent%>:%: # ;
+%,%<cm%>:%, # ;
