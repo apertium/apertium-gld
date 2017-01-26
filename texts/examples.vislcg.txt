@@ -1,0 +1,19 @@
+"<Усэлтэсэл>"
+        "усэлтэ" n pl nom @nsubj #1->8
+"<вайчай>"
+        "ва̄йча" v tv gpr_pres @acl:relcl #2->3
+"<найсал>"
+        "най" n pl nom @nsubj #3->7
+"<тул-тул>"
+        "тул-тул" adv @advmod #4->7
+"<мэпэри>"
+        "мэпэри" prn ref pl acc @obj #5->7
+"<дяди>"
+        "дяди" adj @advmod #6->7
+"<варивачи>"
+        "ва̄" v tv ger_pres acc px3pl @ccomp #7->8
+"<саричи>"
+        "са̄" v tv pres p3 pl @root #8->0
+"<.>"
+        "." sent @punct #9->8
+
