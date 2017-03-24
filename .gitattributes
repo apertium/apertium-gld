@@ -12,6 +12,9 @@
 /apertium-gld.post-gld.dix -text
 /autogen.sh -text
 /configure.ac -text
+dev/nanai-verbs.txt -text
+dev/nani-dic.txt -text
+dev/spellrelax.twol -text
 /gld.prob -text svneol=unset#unset
 /modes.xml -text
 texts/examples.vislcg.txt -text
