@@ -21,9 +21,8 @@ Alphabet
  %{м%}:м
  %{п%}:п
 
- %{ː%}:̄  !!= * @CODE@
+ %{ː%}:̄   ! Length marker
 
- %{ː%}:0 ! FIXME
 
  %{ъ%}:0  ! Low harmony
  %{ь%}:0  ! High harmony

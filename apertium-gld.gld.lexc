@@ -374,7 +374,7 @@ LEXICON CASE
 %<nom%>: POSS-NOM ;
 %<acc%>:%>%{в%}%{A%} # ; 
 %<acc%>: POSS-ACC ; 
-%<dat%>:%>д%{O%} POSS-OBL ;  ! Dir/LR
+%<dat%>:%>д%{O%} POSS-OBL ; 
 %<dat%>:%>ду # ;  
 %<dir%>:%>чи POSS-OBL ; 
 %<abl%>:%>ди%{A%}ди POSS-OBL ; 
@@ -396,6 +396,8 @@ LEXICON N-EKTE
 
 %<n%>%<sg%>:тэ CASE ;
 %<n%>%<pl%>:э%>с%{A%}л CASE ;
+%<n%>%<sg%>%<loc%>:тэ%>л%{A%} POSS-LOC ; 
+%<n%>%<pl%>%<loc%>:э%>с%{A%}л%>д%{O%}л%{A%} POSS-LOC ; 
 
 LEXICON N-NIITSJEN
 
@@ -532,7 +534,7 @@ LEXICON Pronouns
 нёани:нёа PRON-PERS-NYOANI ; 
 нёанчи:нёа PRON-PERS-NYOANTSJI ; 
 
-мэпи:мэ PRON-REFL-MEPI ;
+мэ̄пи:мэ PRON-REFL-MEPI ;
 мэпэри:мэ PRON-REFL-MEPERI ;
 
 тэй:тэй PRON-DEM ; ! ""
@@ -561,7 +563,7 @@ LEXICON Nouns
 
 таон:таон N-NIITSJEN ; ! ""
 
-на:на N-OGDA ; ! "земля"
+на̄:на%{ː%} N-OGDA ; ! "земля"
 
 эктэ:эк N-EKTE ; ! "женщина"
 
@@ -582,6 +584,8 @@ LEXICON Nouns
 хусэгден:хусэгден N-NIITSJEN ; ! "охотник"
 
 дёлока̄н:дёлока%{ː%}н N-NIITSJEN ; ! "" ! Der/Dimin
+
+енгур:енгур N-NIITSJEN ; ! "волк"
 
 ! дёг:дёг 
 
