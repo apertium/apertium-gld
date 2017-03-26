@@ -86,6 +86,7 @@ Multichar_Symbols
 
 LEXICON Root
 
+Conjunctions ;
 Determiners ;
 Pronouns  ;
 Numerals ;
@@ -525,9 +526,17 @@ LEXICON NUM
 
 %<num%>: # ;
 
+LEXICON CA 
+
+%<cnjadv%>: # ; 
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Conjunctions 
+
+таваӈки:таваӈки CA ; ! ""
 
 LEXICON Determiners
 
@@ -602,6 +611,8 @@ LEXICON Nouns
 на̄:на%{ː%} N-OGDA ; ! "земля"
 
 абаха:абаха N-OGDA ; ! "лист"
+гаса:гаса N-OGDA ; ! "птица"
+тава:тава N-OGDA ; ! "огонь"
 
 эктэ:эк N-EKTE ; ! "женщина"
 
