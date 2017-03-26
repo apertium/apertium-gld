@@ -89,6 +89,7 @@ LEXICON Root
 Determiners ;
 Pronouns  ;
 Numerals ;
+Postpositions ; 
 Nouns ;
 ProperNouns ;
 Adverbs ;
@@ -483,6 +484,18 @@ LEXICON A
 
 %<adj%>: # ;
 
+LEXICON POST
+
+%<post%>: # ;
+
+LEXICON POST-OGDA
+
+N-OGDA ; 
+
+LEXICON POST-NIITSJEN 
+
+N-NIITSJEN ; 
+
 LEXICON ADV
 
 %<adv%>: K ;
@@ -552,9 +565,32 @@ LEXICON Numerals
 хуюн:хуюн NUM ; ! "девять"
 дёан:дёан NUM ; ! "десять"
 
+LEXICON Postpositions 
+
+боакиалани:боакиалани POST ; ! "за пределами"
+кирадоани:кирадоани POST ; ! "на краю, у края"
+
+анāдо:ана%{ː%}до POST-OGDA ; ! "без"
+далиндо:далиндо POST-OGDA ; ! ""
+до̄чи:до%{ː%}чи POST-OGDA ; ! ""
+до:до POST-OGDA ; ! "" 
+дюлиэлэ:дюлиэлэ POST-OGDA ; ! ""
+дякпа:дякпа POST-OGDA ; ! ""
+кэ̄ндэли:кэ%{ː%}ндэли POST-OGDA ; ! "вокруг"
+талгиа:талгиа POST-OGDA ; ! "напротив"
+таяла:таяла POST-OGDA ; ! ""
+уектулэ:уектулэ POST-OGDA ; ! "над"
+уелэ:уелэ POST-OGDA ; ! "над"
+хамиактола:хамиактола POST-OGDA ; ! "вслед за"
+хангиала:хангиала POST-OGDA ; ! "в стороне от"
+хангиачи:хангиачи POST-OGDA ; ! "в сторону от"
+холдондола:холдондола POST-OGDA ; ! "около, возле, рядом, сбоку, у"
+холдондо:холдондо POST-OGDA ; ! "сбоку, возле, рядом, около"
+эгдиктэ:эгдиктэ POST-OGDA ; ! "большинство, большая часть"
+таон:таон POST-NIITSJEN ; ! "каждый"
+
 LEXICON Nouns
 
-до:до N-OGDA ; ! "" ! POST
 
 огда:огда N-OGDA ; ! "лодка"
 ниичэн:ни%{ː%}чэн N-NIITSJEN ; ! "птица"
@@ -564,6 +600,8 @@ LEXICON Nouns
 таон:таон N-NIITSJEN ; ! ""
 
 на̄:на%{ː%} N-OGDA ; ! "земля"
+
+абаха:абаха ; ! "лист"
 
 эктэ:эк N-EKTE ; ! "женщина"
 
