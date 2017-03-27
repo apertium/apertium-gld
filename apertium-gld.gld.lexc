@@ -510,6 +510,10 @@ LEXICON POST-NIITSJEN
 
 N-NIITSJEN ; 
 
+LEXICON ADV-PART
+
+%<adv%>: # ; 
+
 LEXICON ADV
 
 %<adv%>: K ;
@@ -933,6 +937,7 @@ LEXICON Nouns
 эукэн:эукэн N-NIITSJEN ; ! "невестка"
 эхэ:эхэ N-OGDA ; ! "неуч"
 
+хурэн:хурэн N-NIITSJEN ; ! "гора"
 
 ! дёг:дёг 
 
@@ -952,6 +957,8 @@ LEXICON Adverbs
 хали:хали ADV-ITG ; ! "когда"
 хони:хони ADV-ITG ; ! "как"
 
+хай:хай ADV-ITG ; ! ""
+
 гэ:гэ ADV ; ! ""
 тэнг:тэнг ADV ; ! "только, очень"
 балана:балана ADV ; ! "давно"
@@ -959,6 +966,27 @@ LEXICON Adverbs
 
 туй:туй ADV ; ! ""
 маня̄:маня%{ː%} ADV ; ! "только" 
+
+хайс:хайс ADV-PART ; ! "снова"
+аба:аба ADV-PART ; ! ""
+ам:ам ADV-PART ; ! ""
+анами:анами ADV-PART ; ! ""
+аба:аба ADV-PART ; ! "не"
+ам:ам ADV-PART ; ! ""
+анами:анами ADV-PART ; ! "и"
+бади:бади ADV-PART ; ! ""
+бай:бай ADV-PART ; ! ""
+бидерэ:бидерэ ADV-PART ; ! "видимо"
+биэсикэ:биэсикэ ADV-PART ; ! "же"
+ек:ек ADV-PART ; ! "вплоть до"
+тас:тас ADV-PART ; ! "даже"
+хавой:хавой ADV-PART ; ! "ну-ка"
+хайни:хайни ADV-PART ; ! "что тут"
+хайрини:хайрини ADV-PART ; ! ""
+хайчи:хайчи ADV-PART ; ! ""
+эчиэ:эчиэ ADV-PART ; ! "не"
+
+
 
 LEXICON Verbs
 
