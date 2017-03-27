@@ -72,23 +72,25 @@ Rules
 !@ б:б а:а {ː}:̄ >:0 р:р {A}:а {н}:0 >:0
 
 "High harmony for {A}"
-%{A%}:э <=> :HighVow (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* \%{й%}: _ ;
-              %{ь%}: ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* \%{й%}: _ ;
+%{A%}:э <=> :HighVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* \%{й%}: _ ;
+              %{ь%}: ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* \%{й%}: _ ;
 
 !@ д:д е:е п:0 >:0 {м}:м ч:ч {A}:э >:0
 
 "Low harmony for {A}"
-%{A%}:а <=> :LowVow (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* \%{й%}: _ ;
-              %{ъ%}: ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* \%{й%}: _ ;
+%{A%}:а <=> :LowVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* \%{й%}: _ ;
+              %{ъ%}: ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* \%{й%}: _ ;
+
+!@ б:б а:а л:л д:д и:и >:0 х:х {A}:а {н}:0 >:0 н:н и:и
 
 
 "High harmony for {A} after {й}"
-%{A%}:е <=> :HighVow (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* %{й%}: _ ;
-              %{ь%}: ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* %{й%}: _ ;
+%{A%}:е <=> :HighVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* %{й%}: _ ;
+              %{ь%}: ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* %{й%}: _ ;
 
 "Low harmony for {A} after {й}"
-%{A%}:я <=> :LowVow (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* %{й%}: _ ;
-              %{ъ%}: ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* %{й%}: _ ;
+%{A%}:я <=> :LowVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* %{й%}: _ ;
+              %{ъ%}: ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* %{й%}: _ ;
          
             
 !! Note that vowel harmony is sometimes not completely attested in final syllable -{O} 
@@ -106,14 +108,14 @@ Rules
 ! о:о г:г д:д а:а >:0 п:п {O}:о >:0 в:в {A}:а 
 
 "High harmony for {O}"
-%{O%}:у <=> :HighVow (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* _ ;
-              %{ь%}: (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* _ ;
+%{O%}:у <=> :HighVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* _ ;
+              %{ь%}: (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* _ ;
 
 !@ х:х у:у {ː}:̄ л:л >:0 {п}:п {O}:у >:0 г:г {O}:у >:0 {A}:э >:0 н:н и:и  
 
 "Low harmony for {O}"
-%{O%}:о <=> :LowVow  (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* _ ;
-              %{ъ%}: (Len:) ([ Cns:0 | :Cns | :Cns NeutVow ]) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* _ ;
+%{O%}:о <=> :LowVow  (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* _ ;
+              %{ъ%}: (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) %>: [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* _ ;
 
 
 !"Vowel harmony for {O} in final syllable"
@@ -208,6 +210,5 @@ Cx:0 <=> _ %>: %{м%}: и ;
 
 
 !@ у:у н:м >:0 {п}:п {O}:у >:0 г:г {O}:у >:0 {A}:э >:0 н:н и:и
-
 
 
