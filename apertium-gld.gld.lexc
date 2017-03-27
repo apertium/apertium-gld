@@ -503,9 +503,16 @@ LEXICON PRON-REFL-MEPERI
 %<prn%>%<ref%>%<pl%>%<dir%>:нчиэри # ;
 %<prn%>%<ref%>%<pl%>%<abl%>:ндиэдиэри # ;
 
-LEXICON PRON-DEM 
+LEXICON PRON-DEM-TEJ-NOM
 
-%<prn%>%<dem%>: CASE ; 
+%<prn%>%<dem%>%<sg%>%<nom%>: K ; 
+
+LEXICON PRON-DEM-TEJ-OBL 
+
+%<prn%>%<dem%>%<sg%>%<acc%>:ва K ; 
+%<prn%>%<dem%>%<sg%>%<dir%>:чи K ; 
+%<prn%>%<dem%>%<sg%>%<ins%>:ди K ; 
+%<prn%>%<dem%>%<sg%>%<loc%>:ла K ; 
 
 LEXICON NP-ANT-M 
 
@@ -598,7 +605,8 @@ LEXICON Pronouns
 мэ̄пи:мэ PRON-REFL-MEPI ;
 мэпэри:мэ PRON-REFL-MEPERI ;
 
-тэй:тэй PRON-DEM ; ! ""
+тэй:тэй PRON-DEM-TEJ-NOM ; ! ""
+тэй:ча PRON-DEM-TEJ-OBL ; ! ""
 
 LEXICON Numerals
 
@@ -1062,6 +1070,7 @@ LEXICON Nouns
 подоха:подоха N-OGDA ; ! "дерево"
 подоха:потоха N-OGDA ; ! "дерево" ! Dir/LR
 наондёка̄н:наондёка%{ː%}н N-NIITSJEN ; ! "мальчик"
+омокта:омокта N-OGDA ; ! "яйцо"
 
 
 
@@ -1095,6 +1104,13 @@ LEXICON Adverbs
 эси:эси ADV ; ! "сейчас" 
 эсӣ:эси%{ː%} ADV ; ! "только что, вот-вот"
 
+пуӈгэл%-пуӈгэл:пуӈгэл%-пуӈгэл ADV ; ! "совершенно"
+пуӈгэл%-пуӈгэл%-пуӈгэл:пуӈгэл%-пуӈгэл%-пуӈгэл ADV ; ! "совершенно"
+
+тэечи:тэечи ADV ; ! "так"
+чаачи:чаачи ADV ; ! "так"
+
+тиас:тиас ADV ; ! "полно"
 
 гэ:гэ ADV ; ! ""
 тэнг:тэнг ADV ; ! "только, очень"
@@ -1204,7 +1220,8 @@ LEXICON Verbs
 инэктэ:инэктэ V-1-IV ; ! "смеяться"
 мурчи:мурчи V-1-TV ; ! "думать"
 гойда:гойда V-1-IV ; ! "медлить"
-
+хэри:хэри V-1-TV ; ! "угощать"
+тава̄н:тава%{ː%}н V-3-TV ; ! "заставить"
 
 LEXICON Interjections
 
