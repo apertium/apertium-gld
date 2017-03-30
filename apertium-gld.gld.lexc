@@ -556,9 +556,18 @@ LEXICON NP-ANT-M
 
 %<np%>%<ant%>%<m%>%<sg%>: # ;
 
+LEXICON NP-COG-OV
+
+%<np%>%<cog%>%<m%>%<sg%>: # ;
+%<np%>%<cog%>%<f%>%<sg%>:а # ;
+
 LEXICON NP-COG-MF
 
-%<np%>%<ant%>%<mf%>%<sg%>: # ;
+%<np%>%<cog%>%<mf%>%<sg%>: # ;
+
+LEXICON NP-TOP
+
+%<np%>%<top%>%<sg%>: CASE ;
 
 LEXICON A
 
@@ -1166,6 +1175,9 @@ LEXICON ProperNouns
 Катя:Катя NP-ANT-F ; ! ""
 
 Оненко:Оненко NP-COG-MF ; ! ""
+Дранишников:Дранишников NP-COG-OV ; ! ""
+
+Троицкое:Троицкое NP-TOP ; ! ""
 
 
 LEXICON Adjectives 
@@ -1396,6 +1408,7 @@ LEXICON Verbs
 нихорāчи:нихора%{ː%}чи V-1-IV ; ! "кланяться"
 та̄:та%{ː%} V-2-IV ; ! "зацепиться"
 досидя:досидя V-1-TV ; ! "слушать"
+молси:молси V-1-TV ; ! "заставлять"
 
 бу:бу V-1-IV ; ! "умирать" ! FIXME: CHECK бур-, буди-
 
