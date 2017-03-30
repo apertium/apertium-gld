@@ -122,7 +122,7 @@ Rules
 !%{O%}:у <=> [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
 
 "Intervocalic {в}"
-%{в%}:в <=> [ :Vow | :й ] %>: _ :Vow ; 
+%{в%}:в <=> [ :Vow | :й ] (%{ː%}:) %>: _ :Vow ; 
 
 "Labialisation of {в}"
 %{в%}:б <=> [ н: | л: ] %>: _ :Vow ; 
