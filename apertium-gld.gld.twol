@@ -204,14 +204,14 @@ Cx:0 <=> _ [ %>: | %⊳: ] %{м%}: и ;
 "б in sg1 only surfaces after a consonant"
 %{б%}:б <=> :Cns [ %>: | %⊳: ] _ ; 
 
-"In possessives, the {б} surfaces as в"
+"In possessives, the {б} surfaces as в"                      ! FIXME: rule only applies to rxpl (?)
 %{б%}:в <=> [ :* - [ %>: | %⊳: ] ]+ Vow: [ %>: | %⊳: ] _  ;
 
 !@ п:п и:и к:к т:т э:э >:0 {б}:в {A}:э р:р и:и 
 
 !@ о:о г:г д:д а:а >:0 {б}:в {A}:а р:р и:и
 
-
 !@ у:у н:м >:0 {п}:п {O}:у >:0 г:г {O}:у >:0 {A}:э >:0 н:н и:и
 
+!@ т:т у:у р:р у:у {ː}: >:0 р:р и:и >:0 {б}:0 и:и
 
