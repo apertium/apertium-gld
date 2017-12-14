@@ -333,7 +333,7 @@ LEXICON POSS-ACC
 %<px2pl%>:%>%{б%}%{A%}%>с%{O%} K ; 
 %<px2pl%>:%>%{б%}%{A%}%>су K ; 
 %<px3pl%>:%>%{б%}%{A%}чи K ; 
-%<rxsg%>:%>и K ;
+%<rxsg%>:%>%{б%}и K ;
 %<rxpl%>:%>%{б%}%{A%}ри K ;
 
 LEXICON POSS-LOC
