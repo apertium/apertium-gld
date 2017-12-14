@@ -9,28 +9,31 @@ Multichar_Symbols
 %<v%>                  ! 
 %<ideo%>
 
-%<tv%>   !
-%<iv%>   !
+%<tv%>                    !
+%<iv%>                    !
 
 %<p1%>
 %<p2%>
 %<p3%>
 
-%<pl%>   ! Plural
-%<sg%>   ! Singular
+%<pl%>                    ! Plural
+%<sg%>                    ! Singular
+
+%<neg%>  
 
 %<emph%> 
 
 %<nom%>
 %<acc%>
 %<dat%>
-%<dir%>   ! Directive
+%<dir%>                   ! Directive
 %<abl%>
-%<ben%>   ! Benefactive / destinative
+%<ben%>                   ! Benefactive / destinative
 %<ins%>
 %<loc%>
 
-%<asrt%>  ! Assertive
+%<asrt%>                  ! Assertive
+%<imp%>                   ! Imperative
 
 %<pres%>
 %<past%>
@@ -88,6 +91,7 @@ Multichar_Symbols
 LEXICON Root
 
 !Temp ;
+Miscellaneous ;
 Conjunctions ;
 Determiners ;
 Pronouns  ;
@@ -230,27 +234,30 @@ LEXICON TENSE-2
 
 %<asrt%>: ASSERT-2 ; 
 
+%<imp%>%<p2%>%<sg%>:%>р%{O%} # ; 
+%<imp%>%<p2%>%<sg%>:%>ру # ;     ! Dir/LR
+
 TENSE-12-COMMON  ;
 
 LEXICON ASSERT-3
 
 %<pres%>:%>%{д%}%{A%}%{н%} PERS-ASSERT-PRES ;
-%<past%>:%>%{к%}%{A%} PERS-ASSERT ; 
+%<past%>:%>%{к%}%{A%} PERS-ASSERT ;            ! FIXME: How does this work with -п stems?
 
 ASSERT-COMMON ; 
 
 LEXICON TENSE-3
 
-%<pres%>:%>ди PERS-INDIC ;
-%<pres%>:%>ди # ; 
+%<pres%>:%>%{д%}и PERS-INDIC ;
+%<pres%>:%>%{д%}и # ; 
 
 %<gna_purp%>:%>г%{O%} POSS-OBL  ; 
 %<gna_purp%>:%>%{п%}%{O%}%>г%{O%} POSS-OBL  ; ! Dir/LR
 %<gna_cond2%>:%>%{O%}чи POSS-OBL-NOREFL ; 
 %<gna_cond2%>:%>%{w%}%{O%}чи POSS-OBL-NOREFL ;  ! Dir/LR
 
-%<gpr_pres%>:%>ди # ;
-%<ger_pres%>:%>ди CASE ;
+%<gpr_pres%>:%>%{д%}и # ;
+%<ger_pres%>:%>%{д%}и CASE ;
 
 %<gna_con%>:%>%{д%}%{A%} K ;
 %<gna_sim%>%<sg%>:%>%{м%}и K ; 
@@ -264,6 +271,27 @@ LEXICON TENSE-3
 
 %<asrt%>: ASSERT-3 ; 
 
+%<imp%>%<p2%>%<sg%>:%>%{д%}%{O%} # ; 
+%<imp%>%<p2%>%<sg%>:%>%{д%}у # ;     ! Dir/LR
+
+LEXICON NEG-TENSE
+
+%<pres%>:%>си PERS-INDIC ;
+%<pres%>:%>си%{н%} PERS-INDIC ;
+%<past%>:%>чи%{н%} PERS-INDIC ;
+
+LEXICON NEG-12
+
+%<neg%>:%>%{р%}%{A%} NEG-TENSE ;
+%<neg%>%<emph%>:%>%{р%}%{A%}%>%{д%}%{A%} NEG-TENSE ;
+%<neg%>:%>%{р%}%{A%} PERS-INDIC ; 
+
+LEXICON NEG-3
+
+%<neg%>:%>%{д%}%{A%} NEG-TENSE ;
+%<neg%>%<emph%>:%>%{д%}%{A%}%>%{д%}%{A%} NEG-TENSE ;
+%<neg%>:%>%{д%}%{A%} PERS-INDIC ; 
+
 LEXICON V-DER 
 
 %<iter%>:%>г%{O%} TENSE-1 ;
@@ -272,38 +300,44 @@ LEXICON V-DER
 LEXICON V-1-TV
 
 %<v%>%<tv%>: TENSE-1 ; 
+%<v%>%<tv%>: NEG-12 ; 
 %<v%>%<tv%>: V-DER ; 
 
 LEXICON V-2-TV 
 
 %<v%>%<tv%>: TENSE-2 ;
+%<v%>%<tv%>: NEG-12 ; 
 %<v%>%<tv%>: V-DER ; 
 
 LEXICON V-3-TV 
 
 %<v%>%<tv%>: TENSE-3 ;
+%<v%>%<tv%>: NEG-3 ; 
 %<v%>%<tv%>: V-DER ; 
 
 LEXICON V-1-IV
 
 %<v%>%<iv%>: TENSE-1 ; 
+%<v%>%<iv%>: NEG-12 ; 
 %<v%>%<iv%>: V-DER ; 
 
 LEXICON V-2-IV 
 
 %<v%>%<iv%>: TENSE-2 ;
+%<v%>%<iv%>: NEG-12 ; 
 %<v%>%<iv%>: V-DER ; 
 
 LEXICON V-3-IV 
 
 %<v%>%<iv%>: TENSE-3 ;
+%<v%>%<iv%>: NEG-3 ; 
 %<v%>%<iv%>: V-DER ; 
 
 LEXICON V-X-IV 
 
 %<v%>%<iv%>%<pres%>:%>%{I%} PERS-INDIC ;
-%<v%>%<iv%>%<past%>:%>чи{н%} PERS-INDIC ; 
-%<v%>%<iv%>%<past%>:%>чи{н%} # ;
+%<v%>%<iv%>%<past%>:%>чи%{н%} PERS-INDIC ; 
+%<v%>%<iv%>%<past%>:%>чи%{н%} # ;
 %<v%>%<iv%>%<past%>:%>чин # ; ! Dir/LR
 
 %<v%>%<iv%>%<gna_purp%>:%>г%{O%} POSS-OBL  ;
@@ -322,6 +356,9 @@ LEXICON V-X-IV
 
 
 %<v%>%<iv%>: V-DER ; 
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON POSS-ACC
 
@@ -632,6 +669,12 @@ LEXICON CA
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Miscellaneous
+
+эчиэ%<neg%>%<past%>:эчиэ # ;
+эм%<neg%>:эм # ;
+аба%<neg%>:аба POSS-NOM ;
 
 LEXICON Conjunctions 
 
@@ -1273,7 +1316,7 @@ LEXICON Adverbs
 хайни:хайни ADV-PART ; ! "что тут"
 хайрини:хайрини ADV-PART ; ! ""
 хайчи:хайчи ADV-PART ; ! ""
-эчиэ:эчиэ ADV-PART ; ! "не"
+!эчиэ:эчиэ ADV-PART ; ! "не"
 
 
 
@@ -1283,7 +1326,11 @@ LEXICON Verbs
 ба̄:ба%{ː%} V-2-TV ; ! "находить"
 ун:ун V-3-TV ; ! "говорить"
 га:га V-3-TV ; ! "собирать"      ! FIXME: Check class IV ?
+га%<v%>%<tv%>%<imp%>%<p2%>%<sg%>:га%>с%{O%} # ;
+га%<v%>%<tv%>%<imp%>%<p2%>%<sg%>:га%>су # ;
 би:би%{ь%} V-X-IV ; ! "быть"
+би%<v%>%<iv%>%<imp%>%<p2%>%<sg%>:би%{ь%}%>с%{O%} # ;
+би%<v%>%<iv%>%<imp%>%<p2%>%<sg%>:би%{ь%}%>су # ;
 хӯл:ху%{ː%}л V-3-TV ; ! "лить"
 соли:соли V-1-TV ; ! "перемешевать"
 деп:деп V-3-TV ; ! "кушать"
@@ -1297,9 +1344,16 @@ LEXICON Verbs
 
 такто̄ла:такто%{ː%}ла V-1-IV ; ! ""
 
+о:о V-3-IV ; ! "становиться"
+о%<v%>%<iv%>%<imp%>%<p2%>%<sg%>:о%>с%{O%} # ;
+о%<v%>%<iv%>%<imp%>%<p2%>%<sg%>:о%>су # ;
+ди:ди%{ь%} V-3-IV ; ! "прибыть"
+ди%<v%>%<iv%>%<imp%>%<p2%>%<sg%>:ди%{ь%}%>с%{O%} # ;
+ди%<v%>%<iv%>%<imp%>%<p2%>%<sg%>:ди%{ь%}%>су # ;
+
 дуэрэ:дуэрэ V-1-IV ; ! "ходить"
-ниэ:ниэ V-2-IV ; ! "входить"
-не:не V-2-IV ; ! "входить"
+ниэ:ниэ V-2-IV ; ! "выходить"
+ниэ:не V-2-IV ; ! "выходить" ! FIXME: Check orthographic variant
 
 нэ̄:нэ%{ː%} V-2-TV ; ! "класть"
 
@@ -1321,7 +1375,7 @@ LEXICON Verbs
 чӣ:чи%{ː%}%{ь%} V-2-IV ; ! "отбирать"
 ва̄:ва%{ː%} V-2-TV ; ! "убивать"
 ва̄йча:ва%{ː%}йча V-1-TV ; ! "убивать"
-са̄:са V-2-TV ; ! "знать"
+са̄:са%{ː%} V-2-TV ; ! "знать"
 
 эу:эу V-2-IV ; ! "идти"
 
@@ -1413,7 +1467,9 @@ LEXICON Verbs
 
 бу:бу V-1-IV ; ! "умирать" ! FIXME: CHECK бур-, буди-
 
-
+хуэлип:хуэлип V-3-IV ; ! ""
+хуэдэп:хуэдэп V-3-IV ; ! "потеряться"
+ходип:ходип V-3-IV ; ! "кончиться"
 
 LEXICON Interjections
 
