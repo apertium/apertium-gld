@@ -18,3 +18,8 @@ dev/spellrelax.twol -text
 /gld.prob -text svneol=unset#unset
 /modes.xml -text
 texts/examples.vislcg.txt -text
+*.dix linguist-language=XML linguist-detectable=true
+*.lrx linguist-language=XML linguist-detectable=true
+*.lsx linguist-language=XML linguist-detectable=true
+*.tsx linguist-language=XML linguist-detectable=true
+*.t[[:digit:]]x linguist-language=XML linguist-detectable=true
